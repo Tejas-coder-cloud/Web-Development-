@@ -26,14 +26,19 @@ function App() {
       },[count])
       variation 4:
       Multiple dependencies 
-
-   */
       useEffect(() => {
       alert("Will run untill count is changed ")
       },[count,total])
-    
-   
-
+      variation 5:
+      Using a cleanup function
+   */
+  useEffect(() => {
+    alert("Count is updated")
+  
+    return () => {
+      alert("Count is unmounted from UI")
+    }
+  }, [count])
   
    function handleclick()
    {
