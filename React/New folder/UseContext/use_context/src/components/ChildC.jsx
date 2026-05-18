@@ -4,10 +4,22 @@ import { ThemeContext } from '../App'
 
 const ChildC = () => {
     // const user=useContext(ThemeContext);
-    const theme=useContext(ThemeContext);
+    function handleclick()
+    {
+      if(theme=='light')
+      {
+        setTheme('dark');
+      }
+      else
+      {
+        setTheme('light');
+      }
+
+    }
+    const {theme,setTheme}=useContext(ThemeContext);
   return (
     <div>
-      <button> Change Theme</button>
+      <button onClick={handleclick}> Change Theme</button>
     </div>
   )
 }
