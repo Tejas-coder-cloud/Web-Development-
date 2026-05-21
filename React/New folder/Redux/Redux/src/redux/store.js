@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter from './features/counter/counter.jsx'
+import counterReducer from '../features/counter/counter.jsx'
 
 
 export const store = configureStore({
@@ -8,3 +8,11 @@ export const store = configureStore({
 
   },
 })
+
+/*
+Steps:
+1. Create Store 
+2. Wrap app component under provider
+3. Create slice
+4. Register reducer in store 
+ */
