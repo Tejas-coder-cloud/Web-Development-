@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import toast from 'react-hot-toast';
 
 const initialState = {
     pastes: localStorage.getItem("pastes")
@@ -11,8 +12,11 @@ export const notes_saver = createSlice({
     initialState,
     reducers: {
         addtopaste: (state, action) => {
+            const paste=action.payload;
+            state.pastes.push(paste);
+            localStorage.setItem("pastes",state.pastes);
+            toast("Paste created successfully")
 
-            state.value += 1
         },
         updatetopaste: (state, action) => {
             state.value -= 1
